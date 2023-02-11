@@ -1,0 +1,115 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.form-container {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 3rem;
+}
+
+h1 {
+  width: 100%;
+  color: #333;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  margin: 3rem auto 0;
+  max-width: 450px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  height: 100%;
+  margin-bottom: 2rem;
+  justify-content: space-between;
+}
+
+.icon {
+  width: 0.94rem;
+  opacity: 0;
+  order: -1;
+  transform: translateX(-110%);
+  transition: all 0.25s;
+
+}
+
+.icon path {
+  stroke: black;
+  stroke-width: 1px;
+  fill: none;
+}
+
+input:focus {
+  outline: none;
+  border-color: hsl(0%,0%, 25%);
+}
+
+input:focus + .icon {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+input[type="text"], input[type="password"] {
+  border: none;
+  padding: 10px 12px;
+  margin-top: -34px;
+  line-height: 2;
+  border-bottom: 1px solid lightgray;
+  font-size: 16px;
+  display: flex;
+}
+
+input:valid {
+  border-color: green;
+}
+
+input[data-touched]:invalid {
+  border-color: orangered;
+}
+
+
+
+button[type="submit"] {
+  padding: 10px;
+  background-color: #3db7d6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+
+svg.line, svg.line2 {
+  width: 100%;
+  stroke: black;
+  height: 0;
+  transition: all 0.3s;
+}
+
+input:focus ~ svg.line, input:focus ~ svg.line2 {
+  height: 2px;
+  stroke: #c0c251;
+  transform: scaleX(450%);
+  display: flex;
+  opacity: 1;
+}
